@@ -1,7 +1,7 @@
 package com.lxisoft.treasurer.model;
 import java.util.ArrayList;
-import com.lxisoft.treasurer.Question;
-import com.lxisoft.treasurer.Option;
+import com.lxisoft.treasurer.model.Question;
+import com.lxisoft.treasurer.model.Option;
 /**
 *The class is just the plain java model class which holds some related variables required for the game page
 *@author Ansal Khan K A
