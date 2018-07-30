@@ -4,4 +4,46 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <security-constraint>
+  <web-resource-collection>
+  <web-resource-name>Treasure</web-resource-name>
+  <url-pattern>/PlayGame.jsp</url-pattern>
+  <http-method>GET</http-method>
+  <http-method>POST</http-method>
+  </web-resource-collection>
+  <auth-constraint>
+  <role-name>user</role-name>
+  </auth-constraint>
+  </security-constraint>
+  <security-role>
+  	<role-name>user</role-name>
+  </security-role>
+
+  <login-config>
+  <auth-method>FORM</auth-method>
+  <form-login-config>
+  <form-login-page>/signin.jsp</form-login-page>
+  </form-login-config>
+  <realm-name>security</realm-name>
+  </login-config>
+   <error-page>
+        <error-code>404</error-code>
+        <location>/Error404.jsp</location>
+</error-page>
+<error-page>
+        <error-code>503</error-code>
+        <location>/Error503.jsp</location>
+</error-page>
+<error-page>
+    <error-code>401</error-code>
+    <location>/Error401.jsp</location>
+</error-page>
+<error-page>
+    <error-code>403</error-code>
+    <location>/Error403.jsp</location>
+</error-page>
+<error-page>
+    <error-code>500</error-code>
+    <location>/Error500.jsp</location>
+</error-page>
 </web-app>
