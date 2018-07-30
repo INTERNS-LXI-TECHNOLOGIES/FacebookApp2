@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V13</title>
+	<title>Sign up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="../../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
-	
+	<body id="top">
+
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-color: black;"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="../../index.html">Treasurer</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="../../index.html">Home</a></li>
+          <li class="active"><a class="drop" href="#">User</a>
+            <ul>
+             
+              <li ><a href="../signin/signin.html">Log In</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="#">Play Game</a></li>
+          
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  	</div>
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="login100-more" style="background-image: url('');"></div>
+			<div class="login100-more" style="background-image: url('images/ban.jpg');"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<form class="login100-form validate-form">

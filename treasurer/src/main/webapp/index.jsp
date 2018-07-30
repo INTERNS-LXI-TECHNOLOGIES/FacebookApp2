@@ -23,7 +23,7 @@
           <li><a class="drop" href="#">User</a>
             <ul>
               <li><a href="pages/signin/signin.html">Log In</a></li>
-              <li><a href="#">Sign up</a></li>
+              <li><a href="pages/signup/signup.html">Sign up</a></li>
             </ul>
           </li>
           
@@ -48,7 +48,7 @@
             <footer>
               <ul class="nospace inline pushright">
                 <li><a class="btn" href="pages/signin/signin.html">Play Game</a></li>
-                <li><a class="btn inverse" href="#">Sign Up</a></li>
+                <li><a class="btn inverse" href="pages/signup/signup.html">Sign Up</a></li>
               </ul>
             </footer>
           </article>
@@ -60,7 +60,7 @@
             <footer>
               <ul class="nospace inline pushright">
                 <li><a class="btn" href="pages/signin/signin.html">Log in</a></li>
-                <li><a class="btn inverse" href="#">Sign Up</a></li>
+                <li><a class="btn inverse" href="pages/signup/signup.html">Sign Up</a></li>
               </ul>
             </footer>
           </article>
@@ -72,7 +72,7 @@
             <footer>
               <ul class="nospace inline pushright">
                 <li><a class="btn" href="pages/signin/signin.html">Play Game</a></li>
-                <li><a class="btn inverse" href="#">Sign Up</a></li>
+                <li><a class="btn inverse" href="pages/signup/signup.html">Sign Up</a></li>
               </ul>
             </footer>
           </article>
