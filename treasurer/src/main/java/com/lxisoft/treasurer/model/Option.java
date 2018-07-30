@@ -2,6 +2,7 @@ package com.lxisoft.treasurer.model;
 /**
 *A plain java class that represents the model of an option,holding an option id and the corresponding imagePath
 *@author Athulya Somakumaran
+*@version 1.1
 */
 public class Option
 {
@@ -15,7 +16,8 @@ private String option;
 private String imagePath;
 
 /**
-*Functions as a way to set the value of option
+*Sets the value of option for question
+*@param option sets the value for option
 */
 public void setOption(String option)
 {
@@ -24,7 +26,7 @@ this.option=option;
 
 /**
 *Functions as an accessor method for the option
-*@return returns the option
+*@return option returns the value for option
 */
 
 public String getOption()
@@ -32,7 +34,8 @@ public String getOption()
 	return option;
 }
 /**
-*Functions as a way to set the value for imagePath
+*Sets the value for imagePath
+*@param imagePath sets  the value for imagePath
 */
 
 public void setImagePath(String imagePath)
@@ -41,7 +44,7 @@ this.imagePath=imagePath;
 }
 /**
 *Functions as an accessor method for imagePath
-*@return returns the imagePath
+*@return imagePath returns the value for imagePath
 */
 public String getImagePath()
 {
