@@ -1,6 +1,7 @@
 package com.lxisoft.treasurer.model;
 /**
 *@author Arthadh B.
+*@version 1.1
 *This class is for setting and getting of variables in class SignIn.
 */
 public class SignIn
