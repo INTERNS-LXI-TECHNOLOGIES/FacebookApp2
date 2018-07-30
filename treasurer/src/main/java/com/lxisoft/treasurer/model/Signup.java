@@ -4,6 +4,7 @@ package com.lxisoft.treasurer.model;
 
 /**This class is for setting and getting of variables in class Signup.
 *@author Varsha.
+*@version 1.1.
 */
 public class Signup
 
