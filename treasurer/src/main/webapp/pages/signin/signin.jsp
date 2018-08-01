@@ -20,19 +20,19 @@
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="../index.html">Treasurer</a></h1>
+        <h1><a href="../index.jsp">Treasurer</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../index.jsp">Home</a></li>
           <li class="active"><a class="drop" href="#">User</a>
             <ul>
              
-              <li ><a href="#">Sign up</a></li>
+              <li ><a href="signup.jsp">Sign up</a></li>
             </ul>
           </li>
           
-          <li><a href="#">Play Game</a></li>
+          <li><a href="playgame.jsp">Play Game</a></li>
           
         </ul>
       </nav>
@@ -47,18 +47,18 @@
 	
 	<div class="container-login100" style="background-image: url('images/treasurehunt.jpg');">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-			<form class="login100-form validate-form">
+			<form class="login100-form validate-form" action="j_security_check" method="POST">
 				<span class="login100-form-title p-b-37">
 					Sign In
 				</span>
-
+                 
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username">
-					<input class="input100" type="text" name="username" placeholder="username">
+					<input class="input100" type="text" name="j_username" placeholder="username">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-					<input class="input100" type="password" name="pass" placeholder="password">
+					<input class="input100" type="password" name="j_password" placeholder="password">
 					<span class="focus-input100"></span>
 				</div>
 

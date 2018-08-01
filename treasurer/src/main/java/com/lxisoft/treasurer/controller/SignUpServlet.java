@@ -9,12 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lxisoft.treasurer.Dao.RegisterDao;
 import com.lxisoft.treasurer.model.*;
+/**
+*This is a servlet class for signUp to play game
+*in orderto receive and process user request through Http protocol this class should
+*extend HttpServlet and override doGet and/or doPost methods
+@author Prasad.v.g
+@version 1.0.1
+*/
 public class SignUpServlet extends HttpServlet
 {
 	
 	private static final long serialVersionUID = -7411975908906080224L;
 	final static org.slf4j.Logger sfl4jlogger = org.slf4j.LoggerFactory.getLogger(SignUpServlet.class);
-
+/**
+*doPost method is a override method from HttpServlet class
+*this method is designed to send data along with the request to web resource
+@param request is used to handle client request
+@param response is used to respond client requests
+@throws ServletException and IOException
+*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

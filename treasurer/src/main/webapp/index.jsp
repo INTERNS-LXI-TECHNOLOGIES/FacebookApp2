@@ -22,7 +22,7 @@
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a class="drop" href="#">User</a>
             <ul>
-              <li><a href="signin.jsp">Log In</a></li>
+              <li><a href="playgame.jsp">Log In</a></li>
               <li><a href="signup.jsp">Sign up</a></li>
             </ul>
           </li>
@@ -59,7 +59,7 @@
             <h2 class="heading">In You</h2>
             <footer>
               <ul class="nospace inline pushright">
-                <li><a class="btn" href="signin.jsp">Log in</a></li>
+                <li><a class="btn" href="playgame.jsp">Log in</a></li>
                 <li><a class="btn inverse" href="signup.jsp">Sign Up</a></li>
               </ul>
             </footer>

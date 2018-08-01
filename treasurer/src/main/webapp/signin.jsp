@@ -28,11 +28,11 @@
           <li class="active"><a class="drop" href="#">User</a>
             <ul>
              
-              <li ><a href="#">Sign up</a></li>
+              <li ><a href="signup.jsp">Sign up</a></li>
             </ul>
           </li>
           
-          <li><a href="#">Play Game</a></li>
+          <li><a href="playgame.jsp">Play Game</a></li>
           
         </ul>
       </nav>

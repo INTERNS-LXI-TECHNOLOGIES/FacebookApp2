@@ -33,7 +33,7 @@
             </ul>
           </li>
           
-          <li><a href="#">Play Game</a></li>
+          <li><a href="playgame.jsp">Play Game</a></li>
           
         </ul>
       </nav>
