@@ -7,6 +7,8 @@ package com.lxisoft.treasurer.model;
 public class Question
 {
 	
+	
+	
 /**
 *The string holds the actual question which is one of the many questions
 */
@@ -49,6 +51,25 @@ public Option getAnswer()
 {
 	return answer;
 }
+
+
+private int questionId;
+
+public int getQuestionId()
+{
+	return this.questionId;
+}
+public void setQuestionId(int questionId)
+{
+this.questionId=questionId;
+}
+
+
+
+
+
+
+
 
 }
 

@@ -1,4 +1,4 @@
-package com.lxisoft.facebookApp2.controller;
+package com.lxisoft.treasurer.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -38,16 +38,18 @@ public class GameServlet extends HttpServlet
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{ 
 	int count=0;
+	int chance = 2;
 	HttpSession session=request.getSession();
-	session.setAttribute("count",count);
 	Game game=new Game();
-	game.setQuestions(findAllQuestions());
+	game.setQuestions(getQuestions());
 	questionMaxLength=game.getQuestions().size();
 	game.setOptions(findOptions());
 	game.setSelection(new Option());
 		
 		session.setAttribute("game",game);
 		session.setAttribute("username",request.getRemoteUser());
+		session.setAttribute("chance",chance);
+	    session.setAttribute("count",count);
 		
 		RequestDispatcher view=request.getRequestDispatcher("playgame.jsp");
 		view.forward(request,response);
@@ -58,22 +60,22 @@ public class GameServlet extends HttpServlet
 	
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
-		int chance = 3;
+		
 		HttpSession session=request.getSession();
 		GamePageModel gamePage=(GamePageModel)session.getAttribute("gamePage");
 		gamePage.setChoice(request.getParameter("choice"));
 	
 		int count=(Integer)session.getAttribute("count");
+	    int chance = (Integer)session.getAttribute("chance");
 		
-		session.setAttribute("chance",chance);
 	if(gamePage.getQuestion().getAnswer().getOption().equals(gamePage.getChoice()))
 	{
-		
+		count = (Integer)session.getAttribute("count");
 		count++;
 		session.setAttribute("count",count);
 		if(count==questionMaxLength)
 		{
-			response.sendRedirect("");
+			response.sendRedirect("output?status=true");
 		}
 		else{
 			response.sendRedirect("playgame.jsp?status=true");
@@ -81,23 +83,25 @@ public class GameServlet extends HttpServlet
 	}	
 	else
 	{
-		chance = (Integer)session.getAttribute("chance");
+		
 		chance--;
-		//session.setAttribute("chance");
-		if(chance>0)
+		session.setAttribute("chance",chance);
+	
+		
+			
+		
+		if(chance==0)
 		{
-			response.sendRedirect("playgame.jsp");
+			
+			
+		      response.sendRedirect("output?status=false");
+			
 		}
 		else
 		{
-			if(chance==0)
-			{
-		      response.sendRedirect("output.jsp?status=false");
-				
-			}
-			
-			
+			response.sendRedirect("playgame.jsp");
 		}
+		  
 	}
 		
 		
@@ -109,9 +113,9 @@ public class GameServlet extends HttpServlet
 	public ArrayList<Question> getQuestions()
 	{
 		ArrayList<Question> questionList=findAllQuestions();
-		Collections.shuffle(questionList);
+		
 		ArrayList<Question> questions=new ArrayList<Question>();
-		for(int i=0;i<4;i++)
+		for(int i=0;i<6;i++)
 		{
 			questions.add(questionList.get(i));	
 		}
@@ -135,7 +139,7 @@ public class GameServlet extends HttpServlet
 			ResultSet rs=statement.executeQuery(sql);
 			while (rs.next()) {
 			Question question=new Question();
-			//question.setQuestionId(rs.getInt(1));
+			question.setQuestionId(rs.getInt(1));
 			question.setQuestion(rs.getString(2));
 			question.setAnswer(new Option());
 			question.getAnswer().setOption(rs.getString(3));
