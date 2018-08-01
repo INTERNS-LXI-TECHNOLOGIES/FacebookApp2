@@ -119,7 +119,7 @@
 	   <%}%>
 </div><!--code for floating lives start-->
 		<i class="float">
-<div class="my-float"><img src="images/chest/float.gif" width="60px" height="60px"</div>
+<div class="my-float"><img src="images/chest/float.gif" width="140%" height="140%"></div>
 </i>
 <div class="label-container">
 <div class="label-text">Lives left <%out.println(""+(Integer)session.getAttribute("chance"));%></div>
