@@ -35,11 +35,11 @@ background-color: #000 ;
           <li class="active"><a class="drop" href="#">User</a>
             <ul>
              
-              <li ><a href="signin.jsp">Log In</a></li>
+              <li ><a href="game">Log In</a></li>
             </ul>
           </li>
           
-          <li><a href="#">Play Again</a></li>
+          <li><a href="game">Play Again</a></li>
           
         </ul>
       </nav>

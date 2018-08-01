@@ -7,7 +7,7 @@
   <security-constraint>
   <web-resource-collection>
   <web-resource-name>Treasure</web-resource-name>
-  <url-pattern>/playgame.jsp</url-pattern>
+  <url-pattern>/game</url-pattern>
   <http-method>GET</http-method>
   <http-method>POST</http-method>
   </web-resource-collection>
@@ -61,13 +61,25 @@
 
 <servlet>
   <description></description>
-  <display-name>sample2</display-name>
-<servlet-name>sample2</servlet-name>
+  <display-name>output</display-name>
+<servlet-name>output</servlet-name>
 <servlet-class>com.lxisoft.treasurer.controller.OutputServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
-<servlet-name>sample2</servlet-name>
-<url-pattern>/login</url-pattern>
+<servlet-name>output</servlet-name>
+<url-pattern>/output</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <description></description>
+  <display-name>game</display-name>
+<servlet-name>game</servlet-name>
+<servlet-class>com.lxisoft.treasurer.controller.GameServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>game</servlet-name>
+<url-pattern>/game</url-pattern>
 </servlet-mapping>
 </web-app>
