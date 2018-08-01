@@ -17,7 +17,7 @@ public class GamePageModel{
 	ArrayList<Option> options;
 
 	/**instance variable to hold the question*/
-	Question questions;
+	Question question;
 
 	/** Setting choice
 	@param choice (passing parameter choice)
@@ -38,9 +38,9 @@ public class GamePageModel{
 	/**	Setting the question
 	@param questions (passing parameter question)
 	*/
-	public void setQuestions(Question questions)
+	public void setQuestion(Question question)
 	{
-		this.questions=questions;
+		this.question=question;
 	}
 
 	/**Getting questions
@@ -48,7 +48,7 @@ public class GamePageModel{
 	*/
 	public Question getQuestion()
 	{
-		return questions;
+		return question;
 	}
 
 	/**setting the option
@@ -62,7 +62,7 @@ public class GamePageModel{
 	/** Getting options
 	@return options (returning the value of options)
 	*/
-	public ArrayList<Option> setOptions()
+	public ArrayList<Option> getOptions()
 	{
 		return options;
 	}

@@ -19,26 +19,29 @@ public class OutputServlet extends HttpServlet
 			/**
 			*get the value from the parameter
 			*/
-		//static int chance =0;
+			HttpSession session=request.getSession();
+				
+        String check = "true";
 		String status=request.getParameter("status");
-		int count = Integer.parseInt(request.getParameter("count"));
+		
+		int count = (Integer)session.getAttribute("count");
 		
 			/**
 			*if the player is win the game or loose the game 
 			*redirect win page or loose page
 			**/
-		/*
-			if(status == true)
+		
+			if(status.equals(check))
 				{
-				    response.sendRedirect("win.jsp");
+				    response.sendRedirect("treasure.jsp");
 				}
 		    else 
 				{
-				  response.sendRedirect("Loose.jsp");
+				  response.sendRedirect("pages/gameover/gameover.jsp");
 								
 				}
 	
-		*/
+		
 		
 	}
 }
