@@ -57,7 +57,7 @@
 			if(count==0){
 				Collections.shuffle(game.getQuestions());
 			}
-			gamePage. setQuestion(game.getQuestions().get(count));
+			gamePage.setQuestion(game.getQuestions().get(count));
 			
 			
 			gamePage.setOptions(game.getOptions());

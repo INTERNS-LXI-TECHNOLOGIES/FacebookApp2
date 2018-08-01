@@ -22,12 +22,12 @@
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a class="drop" href="#">User</a>
             <ul>
-              <li><a href="playgame.jsp">Log In</a></li>
+              <li><a href="game">Log In</a></li>
               <li><a href="signup.jsp">Sign up</a></li>
             </ul>
           </li>
           
-          <li><a href="playgame.jsp">Play Game</a></li>
+          <li><a href="game">Play Game</a></li>
           
         </ul>
       </nav>
@@ -47,7 +47,7 @@
             <h2 class="heading">Treasure Hunt</h2>
             <footer>
               <ul class="nospace inline pushright">
-                <li><a class="btn" href="playgame.jsp">Play Game</a></li>
+                <li><a class="btn" href="game">Play Game</a></li>
                 <li><a class="btn inverse" href="signup.jsp">Sign Up</a></li>
               </ul>
             </footer>
@@ -59,7 +59,7 @@
             <h2 class="heading">In You</h2>
             <footer>
               <ul class="nospace inline pushright">
-                <li><a class="btn" href="playgame.jsp">Log in</a></li>
+                <li><a class="btn" href="game">Log in</a></li>
                 <li><a class="btn inverse" href="signup.jsp">Sign Up</a></li>
               </ul>
             </footer>
@@ -71,7 +71,7 @@
             <h2 class="heading">New Things</h2>
             <footer>
               <ul class="nospace inline pushright">
-                <li><a class="btn" href="playgame.jsp">Play Game</a></li>
+                <li><a class="btn" href="game">Play Game</a></li>
                 <li><a class="btn inverse" href="signup.jsp">Sign Up</a></li>
               </ul>
             </footer>

@@ -26,7 +26,7 @@ public class Signup
 */
 	private String conpassword;
 
-	
+	private String role;
 /**Setting Name.
 *@param name (passing parameter name).
 */
@@ -112,6 +112,12 @@ public class Signup
 		return conpassword;
 	}
 	
-	
-	
+	public void setRole(String role)
+	{
+		this.role = role;
+	}
+	public String getRole()
+	{
+		return role;
+	}
 }

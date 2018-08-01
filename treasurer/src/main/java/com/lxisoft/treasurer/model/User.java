@@ -24,8 +24,8 @@ private String gender;
 */
 
 	public void setUsername(String username) 
+	{
 		this.username=username;
-
 	}
 	
 	/**Setting passwor.
