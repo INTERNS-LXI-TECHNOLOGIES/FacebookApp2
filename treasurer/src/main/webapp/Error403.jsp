@@ -4,6 +4,6 @@
 	<title></title>
 </head>
 <body>
-<h1>Forbidden directory..!!</h1>
+<h1>Error 403..Forbidden directory..!!</h1>
 </body>
 </html>

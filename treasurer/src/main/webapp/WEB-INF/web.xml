@@ -7,7 +7,7 @@
   <security-constraint>
   <web-resource-collection>
   <web-resource-name>Treasure</web-resource-name>
-  <url-pattern>/PlayGame.jsp</url-pattern>
+  <url-pattern>/playgame.jsp</url-pattern>
   <http-method>GET</http-method>
   <http-method>POST</http-method>
   </web-resource-collection>
@@ -16,7 +16,7 @@
   </auth-constraint>
   </security-constraint>
   <security-role>
-  	<role-name>user</role-name>
+    <role-name>user</role-name>
   </security-role>
 
   <login-config>
@@ -46,4 +46,16 @@
     <error-code>500</error-code>
     <location>/Error500.jsp</location>
 </error-page>
+
+  <servlet>
+    <description></description>
+    <display-name>SignUpServlet</display-name>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>com.lxisoft.treasurer.controller.SignUpServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/SignUpServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

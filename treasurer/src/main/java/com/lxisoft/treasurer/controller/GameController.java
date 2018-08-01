@@ -18,16 +18,16 @@ public class GameController
 *The declaration is of a Question class reference that holds the current question that the user is viewing
 */
 	private Question currentQuestion;
-/**
+/*/**
 *The method accessess the next question in the arraylist of questions declared model Game class and returns it
-*@return the next object in the arraylist of questions accessed from the model Game class
+@return the next object in the arraylist of questions accessed from the model Game class
 */
-	public String nextQuestion()
+/*	public String nextQuestion()
 	{
 		ArrayList<Question> questions=model.getQuestions();
 		Question question=questions.get(currentQuestion++);
 		return question.getQuestion();
-	}
+	}*/
 /**
 *The method returns all the options accessed from the Game class and allows the invocator of the controller to access the options wherever needed
 *@return the option list is returned
