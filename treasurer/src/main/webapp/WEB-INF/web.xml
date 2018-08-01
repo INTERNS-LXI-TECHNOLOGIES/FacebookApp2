@@ -58,4 +58,16 @@
     <servlet-name>SignUpServlet</servlet-name>
     <url-pattern>/SignUpServlet</url-pattern>
   </servlet-mapping>
+
+<servlet>
+  <description></description>
+  <display-name>sample2</display-name>
+<servlet-name>sample2</servlet-name>
+<servlet-class>com.lxisoft.treasurer.controller.OutputServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>sample2</servlet-name>
+<url-pattern>/login</url-pattern>
+</servlet-mapping>
 </web-app>

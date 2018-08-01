@@ -12,7 +12,7 @@
     background:#8B4513 ;
     padding: 20px; 
     width: 100%;
-    height: 10%;    
+    height: 5%;    
 }
 #option {
     border-radius: 8px;
@@ -28,7 +28,7 @@
 
 .column {
     float: left;
-    width: 33.33%;
+    width: 16.66%;
     padding: 5px;
 }
 
@@ -40,15 +40,50 @@
 </style>
 	</head>
 	<body>
+	
+	<%
+	
+	Game game=(Game)session.getAttribute("game");
+	String userName = (String)session.getAttribute("username");
+	
+	int count = (Integer)session.getAttribute("count");
+       if(count<=12)
+	   {
 
+			GamePageModel gamePage=new GamePage();
+			gamePage.setQuestion(game.getQuestions().get(count));
+			gamePage.setOptions(game.getOptions());
+			session.setAttribute("gamePage",gamePage);
+			int chance = (Integer)session.getAttribute("chance");
+			int marks = (Integer)session.getAttribute("count");
+			
+			%>
+			
+			
+	
+	
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
 					<header id="header">
-						<span class="avatar"><img src="images/chest/chest.gif" alt="" /></span>
+					    <h1><%out.print("HELLO "+userName)%></h1>
+						<span class="avatar"><img src="images/chest/chest.gif" alt=""  /></span
+						
+					<%
+						for(int i = 0;i<chance;i++)
+						{%>
+						
+				            <p align = "center"><img src ="images/<%i.png%>" alt = "">
+							<h1>Current Score<%out.println(marks);%></h1>
+							
+					    <%
+						session.setAttribute("count",marks);
+						session.setAttribute("chance",chance);
+						}
+						%>
 						<!-- Enter the question inside h1 tag -->
-						<h1 id="question"><strong>Question goes here</strong></h1>
+						<h1 id="question"><strong><%out.println(gamePage.getQuestion().getQuestion() );%></strong></h1>
 						<!-- Enter the question inside h1 tag -->
 						<br />
 					</header>
@@ -57,122 +92,24 @@
 					<section id="main">
 
 						<!-- Thumbnails -->
-							
-								<div class="row">
+							<%for(int i=0;i<gamePage.getOptions().size();i++){
+								%>
+								
+								
+								<%
+								if(i%6==0){%>
+								
+								<div class="row"><%}%>
 										<div class="column">
-									 
-										<input type="image" src="images/chest/closed.png" alt="alarm" onmouseover="this.src='images/chest/alarm copy.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Alarm</h3></center></center>
-									
-									</div><div class="column">
-									 
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/book shelf.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Shelf</h3></center>
-									</div><div class="column">
-								
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/candle.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Candle</h3></center>
-									</div></div>
-									<div class="row"><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/clock.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Clock</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/computer.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Computer</h3></center>
-									</div><div class="column">
-								
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/desk.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Desk</h3></center>
-									</div></div>
-									<div class="row"><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/dictionary.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Dictionary</h3></center>
-									</div><div class="column">
+										<form action="gameServlet" method="post"><input type="hidden" name="choice" value="<%=gamePage.getOptions().get(i).getOption()%>">
+										<input type="image" src="images/chest/closed.png" alt="submit" onmouseover="this.src='images/chest/<%gamePage.getOptions().get(i).getImagePath()%>'" onmouseout="this.src='images/chest/closed.png'" style="width:100%"  />
+										</form>
 										
 									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/dish.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Dish</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/door.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Door</h3></center>
-									</div></div>
-									<div class="row"><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/lamp.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Lamp</h3></center>
-									</div><div class="column">
+									</div><%if(i%6==5){%></div>
 										
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/mirror.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Mirror</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/oven.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Oven</h3></center>
-									</div></div>
-									<div class="row"><div class="column">
-									
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/pantry.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Pantry</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/paper.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Paper</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/pillow.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Pillow</h3></center>
-									</div></div>
-									<div class="row"><div class="column">
-									
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/potato.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Potato</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/refrigerator.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Refrigerator</h3></center>
-									</div><div class="column">
-									
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/shower.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Shower</h3></center>
-									</div></div>
-									<div class="row"><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/stairs.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Stairs</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/stove.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Stove</h3></center>
-									</div><div class="column">
-									
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/television.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Televison</h3></center>
-									</div></div>
-									<div class="row"><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/toaster.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Toaster</h3></center>
-									</div><div class="column">
-									
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/towel.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Towel</h3></center>
-									</div><div class="column">
-									
-										<input type="image" src="images/chest/closed.png" alt="" onmouseover="this.src='images/chest/washer.png'" onmouseout="this.src='images/chest/closed.png'" style="width:100%" />
-										<center> <h3 id="option">Washer</h3></center>
-									</div></div>
+							<%}%>
+							<%}%>
 									
 									
 								
