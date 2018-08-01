@@ -17,19 +17,19 @@
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="index.html">Treasurer</a></h1>
+        <h1><a href="index.jsp">Treasurer</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="index.jsp">Home</a></li>
           <li><a class="drop" href="#">User</a>
             <ul>
-              <li><a href="pages/signin/signin.html">Log In</a></li>
-              <li><a href="pages/signup/signup.html">Sign up</a></li>
+              <li><a href="signin.jsp">Log In</a></li>
+              <li><a href="signup.jsp">Sign up</a></li>
             </ul>
           </li>
           
-          <li><a href="pages/signin/signin.html">Play Game</a></li>
+          <li><a href="playgame.jsp">Play Game</a></li>
           
         </ul>
       </nav>

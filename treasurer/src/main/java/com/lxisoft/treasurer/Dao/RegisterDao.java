@@ -34,7 +34,7 @@ public class RegisterDao {
 			 * Insert user details into the table 'newUsers'
 			 */
 
-			String query = "insert into newUsers(fullName,email,userName,password,role) values (?,?,?,?,?)";
+			String query = "insert into newUsers( fullName,email,userName,password,role) values (?,?,?,?,?)";
             
 
 			/**
@@ -51,6 +51,19 @@ public class RegisterDao {
 
 			int i = preparedStatement.executeUpdate();
 
+			      String query1 = "INSERT INTO users(username,userpass) values(?,?)";
+			preparedStatement = con.prepareStatement(query1);
+			preparedStatement.setString(1,username);
+			preparedStatement.setString(2,userpass);
+			preparedStatement.executeUpdate();
+
+
+			String query2 = "INSERT INTO userroles(username,rolename) values(?,?)";
+			preparedStatement = con.prepareStatement(query2);
+			preparedStatement.setString(1,username);
+			preparedStatement.setString(2,rolename);
+			preparedStatement.executeUpdate();
+
 			if (i != 0) // Just to ensure data has been inserted into the
 						// database
 				return "SUCCESS";
@@ -59,30 +72,7 @@ public class RegisterDao {
 		{
 			e.printStackTrace();
 		}
-		try
-		{
-          String query1 = "INSERT INTO users(username,userpass) values(?,?)";
-			preparedStatement = con.prepareStatement(query1);
-			preparedStatement.setString(1,username);
-			preparedStatement.setString(2,userpass);
-			preparedStatement.executeUpdate();
-		}
-		catch(SQLException sq)
-		{
-			sq.printStackTrace();
-		}
-		try
-		{
-			String query1 = "INSERT INTO userroles(username,rolename) values(?,?)";
-			preparedStatement = con.prepareStatement(query1);
-			preparedStatement.setString(1,username);
-			preparedStatement.setString(2,rolename);
-			preparedStatement.executeUpdate();
-		}
-		catch(SQLException se)
-		{
-           se.printStackTrace();
-		}
+	
 		return "Oops.. Something went wrong there..!"; // On failure, send a
 														// message from here.
 
