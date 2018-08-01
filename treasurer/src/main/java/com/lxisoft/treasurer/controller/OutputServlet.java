@@ -7,31 +7,37 @@ import java.io.*;
 	*version 1.0
 	*date 30/07/2018
 **/
-public class OutputServlet extends HttpServlet{
-	public void doGet(HttpServletRequest request,HttpServletResponse response)throws IOException{
-		//OutputController oc=new OutputController();
-		//HttpSession session = request.getSession();
-		//session.setAttribute("values",oc.name);
+public class OutputServlet extends HttpServlet
+
+{
+	public void doPost(HttpServletRequest request,HttpServletResponse response)
+	   {
+	   }
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws IOException
+	
+		{
+			/**
+			*get the value from the parameter
+			*/
+		static int chance =0;
+		String status=request.getParameter("status");
+		int count = Integer.parseInt(request.getParameter("count"));
 		
-		/**
-		*get the value from the parameter
-		**/
+			/**
+			*if the player is win the game or loose the game 
+			*redirect win page or loose page
+			**/
 		
-		String name="false";
-		String s=request.getParameter("status");
-		
-		/**
-		*if the player is win the game or loose the game 
-		*redirect win page or loose page
-		**/
-		
-		if(s.equals(name)){
-			response.sendRedirect("win.jsp");
-		}
-		else{
-			response.sendRedirect("Loose.jsp");
-		}
-		//response.sendRedirect("LoginPage.jsp");
+			if(status == true)
+				{
+				    response.sendRedirect("win.jsp");
+				}
+		    else 
+				{
+				  response.sendRedirect("Loose.jsp");
+								
+				}
+	
 		
 		
 	}
