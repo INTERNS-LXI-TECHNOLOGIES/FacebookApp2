@@ -37,7 +37,7 @@ public class OutputServlet extends HttpServlet
 				}
 		    else 
 				{
-				  response.sendRedirect("pages/gameover/gameover.jsp");
+				  response.sendRedirect("gameover.jsp");
 								
 				}
 	

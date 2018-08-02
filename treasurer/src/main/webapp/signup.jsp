@@ -10,37 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="pages/signup/css/main.css">
 	<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <!--===============================================================================================-->
-</head>
-<body style="background-color: #999999;">
-	<body id="top">
-
-<!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-color: black;"> 
-  <!-- ################################################################################################ -->
-  <div class="wrapper row1">
-    <header id="header" class="hoc clear"> 
-      <!-- ################################################################################################ -->
-      <div id="logo" class="fl_left">
-        <h1><a href="index.jsp">Treasurer</a></h1>
-      </div>
-      <nav id="mainav" class="fl_right">
-        <ul class="clear">
-          <li><a href="index.jsp">Home</a></li>
-          <li class="active"><a class="drop" href="#">User</a>
-            <ul>
-             
-              <li ><a href="signin.jsp">Log In</a></li>
-            </ul>
-          </li>
-          
-          <li><a href="playgame.jsp">Play Game</a></li>
-          
-        </ul>
-      </nav>
-      <!-- ################################################################################################ -->
-    </header>
-  </div>
-  	</div>
+<!--===============================================================================================-->
   	<script>
 	function validate() {
 
@@ -68,6 +38,40 @@
 		}
 	}
 </script>
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #999999;">
+	<body id="top">
+
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-color: black;"> 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <h1><a href="index.jsp">Treasurer</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.jsp">Home</a></li>
+          <li class="active"><a class="drop" href="#">User</a>
+            <ul>
+             
+              <li ><a href="signin.jsp">Log In</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="game">Play Game</a></li>
+          
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
+  </div>
+  	</div>
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="login100-more" style="background-image: url('pages/signup/images/ban.jpg');"></div>
@@ -106,10 +110,10 @@
 						<span class="label-input100">Confirm Password</span>
 						<input class="input100" type="text" name="repeat-pass" placeholder="*************">
 						<span class="focus-input100"></span>
-						<td><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></td>
+						
 					</div>
 
-					
+					<td><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></td>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">

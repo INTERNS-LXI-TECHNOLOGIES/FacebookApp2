@@ -54,8 +54,13 @@
 	   {
 
 	 		GamePageModel gamePage=new GamePageModel();
+	 		int chance = (Integer)session.getAttribute("chance");
 			if(count==0){
+			if(chance==2){
 				Collections.shuffle(game.getQuestions());
+			}
+
+				
 			}
 			gamePage.setQuestion(game.getQuestions().get(count));
 			
@@ -63,7 +68,7 @@
 			gamePage.setOptions(game.getOptions());
 			Collections.shuffle(gamePage.getOptions());
 			session.setAttribute("gamePage",gamePage);
-			int chance = (Integer)session.getAttribute("chance");
+			
 			
 			
 			%>

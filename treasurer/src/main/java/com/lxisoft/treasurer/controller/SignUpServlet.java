@@ -64,7 +64,7 @@ public class SignUpServlet extends HttpServlet
 		 *  On success, you can display a message to user on UserLogin page
 		 */
 		if (userRegistered.equals("SUCCESS")) {
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			response.sendRedirect("index.jsp");
 		} else // On Failure, display a meaningful message to the User.
 		{
 			request.setAttribute("errMessage", userRegistered);
