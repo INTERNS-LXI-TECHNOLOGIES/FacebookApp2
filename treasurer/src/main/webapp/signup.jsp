@@ -10,36 +10,6 @@
 	<link rel="stylesheet" type="text/css" href="pages/signup/css/main.css">
 	<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <!--===============================================================================================-->
-<!--===============================================================================================-->
-  	<script>
-	function validate() {
-
-		var name = document.form.name.value;
-		var email = document.form.email.value;
-		var uname = document.form.uname.value;
-		var password = document.form.password.value;
-		var repeat-pass = document.form.repeat-pass.value;
-
-		if (name == null || name == "") {
-			alert("Full Name can't be blank");
-			return false;
-		} else if (email == null || email == "") {
-			alert("Email can't be blank");
-			return false;
-		} else if (uname == null || uname == "") {
-			alert("Username can't be blank");
-			return false;
-		} else if (password.length < 6) {
-			alert("Password must be at least 6 characters long.");
-			return false;
-		} else if (password != repeat-pass) {
-			alert("Confirm Password should match with the Password");
-			return false;
-		}
-	}
-</script>
-<!--===============================================================================================-->
-<!--===============================================================================================-->
 </head>
 <body style="background-color: #999999;">
 	<body id="top">
@@ -63,7 +33,7 @@
             </ul>
           </li>
           
-          <li><a href="game">Play Game</a></li>
+          <li><a href="playgame.jsp">Play Game</a></li>
           
         </ul>
       </nav>
@@ -71,7 +41,42 @@
     </header>
   </div>
   	</div>
+  	<script>
+	function validate() {
 
+		var name = document.form.name.value;
+		var email = document.form.email.value;
+		var uname = document.form.username.value;
+		var password = document.form.pass.value;
+		var repeat-pass = document.form.repeat-pass.value;
+
+		if (name == null || name == "") {
+			alert("Full Name can't be blank");
+			return false;
+		} else if (uname == null || uname == "") {
+			alert("Username can't be blank");
+			return false;
+		} else if (password.length < 6) {
+			alert("Password must be at least 6 characters long.");
+			return false;
+		} else if (password != repeat-pass) {
+			alert("Confirm Password should match with the Password");
+			return false;
+		}
+	}
+	function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(emailField.value) == false) 
+        {
+            alert('Invalid Email Address');
+            return false;
+        }
+
+        return true;
+
+	}
+</script>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="login100-more" style="background-image: url('pages/signup/images/ban.jpg');"></div>
@@ -82,39 +87,36 @@
 						Sign Up
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Full Name</span>
 						<input class="input100" type="text" name="name" placeholder="Name...">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Email</span>
-						<input class="input100" type="text" name="email" placeholder="Email addess...">
+						<input class="input100" type="text" name="email" onblur="validateEmail(this);" placeholder="Email addess...">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Username is required">
+					<div class="wrap-input100 validate-input" >
 						<span class="label-input100">Username</span>
 						<input class="input100" type="text" name="username" placeholder="Username...">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Password</span>
 						<input class="input100" type="text" name="pass" placeholder="*************">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+					<div class="wrap-input100 validate-input" data-validate = >
 						<span class="label-input100">Confirm Password</span>
 						<input class="input100" type="text" name="repeat-pass" placeholder="*************">
 						<span class="focus-input100"></span>
-						
-					</div>
-
-					<td><%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></td>
-
+						<%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></td>
+					</div>	
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
@@ -123,9 +125,7 @@
 								Sign Up
 							</button>
 							</center>
-						</div>
-
-						
+						</div>			
 					</div>
 				</form>
 			</div>
