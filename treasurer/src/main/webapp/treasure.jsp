@@ -40,7 +40,7 @@
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
  
- <br /><center><img src="images/chest/tenor.gif" alt="Avatar" style="width:200px"></center>
+ <center><img src="images/chest/tenor.gif" alt="Avatar" style="width:200px"></center>
  <div id="pageintro" class="hoc clear"> 
 
     <!-- ################################################################################################ -->
@@ -56,7 +56,8 @@
 		<h2 class="frame-2">your score is <%out.print(score);%></h2>
 
 			<h2 class="frame-3"> 
-			<span><button class="button button1">Play Again</button></span>
+			<span><button class="button button1"><a href="logout">Log out</button></span>
+    
 			</h2>
 	</div>
 </div>

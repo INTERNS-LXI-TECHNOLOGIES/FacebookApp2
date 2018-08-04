@@ -37,6 +37,10 @@ background-color: #000 ;
              
               <li ><a href="game">Log In</a></li>
             </ul>
+            <ul>
+             
+              <li ><a href="logout">Log Out</a></li>
+            </ul>
           </li>
           
           <li><a href="game">Play Again</a></li>

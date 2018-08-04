@@ -14,7 +14,7 @@
 <body id="top">
 
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('images/background/bg.jpg');"> 
+<div class="bgded overlay" style="background-color: #000000;"> 
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 

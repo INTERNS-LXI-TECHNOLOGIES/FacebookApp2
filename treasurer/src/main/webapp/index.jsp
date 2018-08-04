@@ -7,7 +7,9 @@
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-
+<audio autoplay loop>
+  <source src="assets/audio/gameAud2.mp3" type="audio/mpeg" />
+</audio>
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('images/background/bg.jpg');"> 
   <!-- ################################################################################################ -->

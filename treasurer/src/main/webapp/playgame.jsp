@@ -6,38 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/game.css" />
-		<style> 
-#question {
-    border-radius: 25px;
-    background:#8B4513 ;
-    padding: 20px; 
-    width: 100%;
-    height: 5%;    
-}
-#option {
-    border-radius: 8px;
-    background: #73AD21;
-    padding: 20px; 
-    width: 30%;
-    height: 10%;    
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.column {
-    float: left;
-    width: 16.66%;
-    padding: 5px;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-</style>
 	</head>
 	<body>
 	
@@ -124,11 +92,13 @@
 	   <%}%>
 </div><!--code for floating lives start-->
 		<i class="float">
-<div class="my-float"><img src="images/chest/float.gif" width="60px" height="60px"></div>
+	
+<div class="my-float"><img src="images/chest/float.gif" width="140%" height="140%"></div>
 </i>
 <div class="label-container">
 <div class="label-text">Lives left <%out.println(""+(Integer)session.getAttribute("chance"));%></div>
 <i class="fa fa-play label-arrow"></i>
+
 </div>
 <!--code for floating lives end-->
 	   

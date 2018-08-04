@@ -107,13 +107,13 @@
 
 					<div class="wrap-input100 validate-input">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="text" name="pass" placeholder="*************">
+						<input class="input100" type="password" name="pass" placeholder="*************">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = >
 						<span class="label-input100">Confirm Password</span>
-						<input class="input100" type="text" name="repeat-pass" placeholder="*************">
+						<input class="input100" type="password" name="repeat-pass" placeholder="*************">
 						<span class="focus-input100"></span>
 						<%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%></td>
 					</div>	

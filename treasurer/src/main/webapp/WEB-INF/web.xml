@@ -28,22 +28,27 @@
   </login-config>
    <error-page>
         <error-code>404</error-code>
+        <exception-type>java.lang.Exception</exception-type>
         <location>/Error404.jsp</location>
 </error-page>
 <error-page>
         <error-code>503</error-code>
+        <exception-type>java.lang.Exception</exception-type>
         <location>/Error503.jsp</location>
 </error-page>
 <error-page>
     <error-code>401</error-code>
+    <exception-type>java.lang.Exception</exception-type>
     <location>/Error401.jsp</location>
 </error-page>
 <error-page>
     <error-code>403</error-code>
+    <exception-type>java.lang.Exception</exception-type>
     <location>/Error403.jsp</location>
 </error-page>
 <error-page>
     <error-code>500</error-code>
+    <exception-type>java.lang.Exception</exception-type>
     <location>/Error500.jsp</location>
 </error-page>
 
@@ -81,5 +86,17 @@
 <servlet-mapping>
 <servlet-name>game</servlet-name>
 <url-pattern>/game</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <description></description>
+  <display-name>logout</display-name>
+<servlet-name>logout</servlet-name>
+<servlet-class>com.lxisoft.treasurer.controller.LogoutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>logout</servlet-name>
+<url-pattern>/logout</url-pattern>
 </servlet-mapping>
 </web-app>
