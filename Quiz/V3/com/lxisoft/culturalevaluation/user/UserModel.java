@@ -1,4 +1,4 @@
-package com.lxisoft.culturalevaluation.user;
+ package com.lxisoft.culturalevaluation.user;
 
 public class UserModel
 {
