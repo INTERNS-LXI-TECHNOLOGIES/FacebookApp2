@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class NameController {
 
 	@RequestMapping("/sample")
-	public String sample{
+	
+	public String sample
+	{
 		
 		return "display.jsp";
 	}
