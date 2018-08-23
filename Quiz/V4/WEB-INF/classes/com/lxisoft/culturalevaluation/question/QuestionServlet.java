@@ -3,10 +3,28 @@ import java.util.ArrayList;
 import com.lxisoft.culturalevaluation.options.OptionListModel;
 import com.lxisoft.culturalevaluation.options.OptionListController;
 import java.sql.*;
+import javax.servlet.http.HttpSession;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-public class QuestionController
+public class QuestionServlet extends HttpServlet 
 {
-	QuestionView view=new QuestionView();
+	PrintWriter out;
+	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
+	{
+		out=response.getWriter();
+		ArrayList<QuestionModel> questionList=loadQuestionFile();
+		HttpSession session=request.getSession();
+		session.setAttribute("questionList",questionList);
+		System.out.println(session.getAttribute("questionList")+"   questionList");
+		response.sendRedirect("assessment");
+	}
+	
 	public ArrayList<QuestionModel> loadQuestionFile()
 	{
 		ArrayList<QuestionModel> questions=new ArrayList<QuestionModel>();
@@ -46,7 +64,7 @@ public class QuestionController
 		}
 		catch(Exception e)
 		{
-			view.printError("Error");
+			out.print("error");
 		}
 		finally
 		{
@@ -65,28 +83,5 @@ public class QuestionController
 			}
 		}
 		return questions;
-	}
-	public int askQuestions(ArrayList<QuestionModel> questions)
-	{
-		int score=0;
-		for(QuestionModel question:questions)
-		{
-			char choice=view.ask(question);
-			score+=updateScore(choice,question);
-		}
-		return score;
-	}
-	public int updateScore(char choice,QuestionModel question)
-	{
-		char ch=Character.toLowerCase(choice);
-		OptionListModel optionList=question.getOptionList();
-		switch(ch)
-		{
-			case 'a':return optionList.getOptionA_Score();
-			case 'b':return optionList.getOptionB_Score();
-			case 'c':return optionList.getOptionC_Score();
-			case 'd':return optionList.getOptionD_Score();
-			default: view.printError("Wrong Option"); return 0;
-		}
 	}
 }

@@ -15,13 +15,16 @@ public class OptionListModel
 	public static String getOptionA()
 	{
 		return optionA;
-	}public static String getOptioB()
+	}
+	public static String getOptionB()
 	{
 		return optionB;
-	}public static String getOptionC()
+	}
+	public static String getOptionC()
 	{
 		return optionC;
-	}public static String getOptionD()
+	}
+	public static String getOptionD()
 	{
 		return optionD;
 	}

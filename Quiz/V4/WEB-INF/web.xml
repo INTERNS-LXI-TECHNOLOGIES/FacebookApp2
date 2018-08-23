@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app>
+	<servlet>
+		<servlet-name>user</servlet-name>
+		<servlet-class>com.lxisoft.culturalevaluation.user.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>user</servlet-name>
+		<url-pattern>/user1</url-pattern>
+		
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>question</servlet-name>
+		<servlet-class>com.lxisoft.culturalevaluation.question.QuestionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>question</servlet-name>
+		<url-pattern>/question</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>assessment</servlet-name>
+		<servlet-class>com.lxisoft.culturalevaluation.assessment.AssessmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>assessment</servlet-name>
+		<url-pattern>/assessment</url-pattern>
+	</servlet-mapping>
+</web-app>

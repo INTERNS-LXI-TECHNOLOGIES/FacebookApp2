@@ -1,12 +1,41 @@
 package com.lxisoft.culturalevaluation.user;
+
 import java.sql.*;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.GenericServlet;
+import java.io.Serializable;
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-public class UserController
+public class UserServlet extends HttpServlet
 {
-	UserModel currentUser;
 	ArrayList<UserModel> users;
-	UserView view=new UserView();
+	
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
+	{
+		users=loadUsers();
+		UserModel currentUser=new UserModel();
+		currentUser.setUsername(request.getParameter("username"));
+		currentUser.setPassword(request.getParameter("password"));
+		HttpSession session=request.getSession();
+		session.setAttribute("qNo",0);
+		session.setAttribute("user",currentUser);
+		if(validateUser(currentUser))
+		{
+			System.out.println(currentUser.getUsername()+currentUser.getPassword());
+			//RequestDispatcher dispatch=request.getRequestDispatcher("assessment");
+			//dispatch.forward(request,response);
+			response.sendRedirect("assessment");
+		}
+	}
 	public ArrayList<UserModel> loadUsers()
 	{
 		users=new ArrayList<UserModel>();
@@ -36,7 +65,7 @@ public class UserController
 		}
 		catch(Exception e)
 		{
-			view.printError("Error");
+			
 		}
 		finally
 		{
@@ -56,37 +85,7 @@ public class UserController
 		}
 		return users;
 	}
-	public UserModel getCurrentUser()
-	{
-		currentUser=new UserModel();
-		do
-		{
-			String userName=view.askUsername();
-			if(isExistingUser(userName))
-			{
-				currentUser.setUsername(userName);
-				String password=view.askPassword();
-				currentUser.setPassword(password);
-			}
-			else
-			{
-				view.printError("Invalid username...");
-				continue;
-			}
-		}while(!validateUser());
-		view.loginSuccess(currentUser.getUsername());
-		return currentUser;
-	}
-	public boolean isExistingUser(String userName)
-	{
-		for(UserModel u:users)
-		{
-			if(userName.equals(u.getUsername()))
-				return true;
-		}
-		return false;
-	}
-	public boolean validateUser()
+	public boolean validateUser(UserModel currentUser)
 	{
 		for(UserModel user:users)
 		{
@@ -95,11 +94,6 @@ public class UserController
 				if(user.getPassword().equals(currentUser.getPassword()))
 				{
 					return true;
-				}
-				else
-				{
-					view.printError("Password Incorrect...");
-					break;
 				}
 			}
 		}

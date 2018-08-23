@@ -5,27 +5,18 @@ import com.lxisoft.culturalevaluation.question.QuestionModel;
 
 public class AssessmentModel
 {
-	private ArrayList<UserModel> userList;
-	private UserModel currentUser;
+	//private UserModel currentUser;
 	private ArrayList<QuestionModel> questionList;
 	private int finalTestScore;
 	
-	public ArrayList<UserModel> getUserList()
-	{
-		return userList;
-	}
-	public void setUserList(ArrayList<UserModel> userList)
-	{
-		this.userList=userList;
-	}
-	public UserModel getCurrentUser()
+	/*public UserModel getCurrentUser()
 	{
 		return currentUser;
 	}
 	public void setCurrentUser(UserModel currentUser)
 	{
 		this.currentUser=currentUser;
-	}
+	}*/
 	public ArrayList<QuestionModel> getQuestionList()
 	{
 		return questionList;
