@@ -3,7 +3,7 @@
 		<title>Quiz</title>
 	<head>
 	<body>
-		<%@ page import="javax.servlet.http.HttpSession ,java.util.ArrayList,com.lxisoft.culturalevaluation.question.QuestionModel,javax.servlet.RequestDispatcher"%>
+		<%@ page import="java.util.ArrayList,com.lxisoft.culturalevaluation.question.QuestionModel"%>
 		<%
 			
 			QuestionModel question=(QuestionModel)session.getAttribute("question");
@@ -16,16 +16,10 @@
 		%>
 			<p><%out.println(qstnNo+"."+qstn);%></p>
 		<form action="assessment">
-			<button type="submit"><%=optionA%></button>
-		</form>
-		<form action="assessment">
-			<button type="submit"><%=optionB%></button>
-		</form>
-		<form action="assessment">
-			<button type="submit"><%=optionC%></button>
-		</form>
-		<form action="assessment">
-			<button type="submit"><%=optionD%></button>
+			<input type=submit name="selection" value="<%=optionA%>"><br/>
+			<input type=submit name="selection" value="<%=optionB%>"><br/>
+			<input type=submit name="selection" value="<%=optionC%>"><br/>
+			<input type=submit name="selection" value="<%=optionD%>"><br/>
 		</form>
 	</body>
 </html>

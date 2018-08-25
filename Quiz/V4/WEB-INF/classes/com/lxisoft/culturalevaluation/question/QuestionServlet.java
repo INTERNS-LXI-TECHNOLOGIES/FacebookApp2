@@ -1,7 +1,6 @@
 package com.lxisoft.culturalevaluation.question;
 import java.util.ArrayList;
 import com.lxisoft.culturalevaluation.options.OptionListModel;
-import com.lxisoft.culturalevaluation.options.OptionListController;
 import java.sql.*;
 import javax.servlet.http.HttpSession;
 import javax.servlet.RequestDispatcher;
@@ -21,7 +20,6 @@ public class QuestionServlet extends HttpServlet
 		ArrayList<QuestionModel> questionList=loadQuestionFile();
 		HttpSession session=request.getSession();
 		session.setAttribute("questionList",questionList);
-		System.out.println(session.getAttribute("questionList")+"   questionList");
 		response.sendRedirect("assessment");
 	}
 	
@@ -34,7 +32,7 @@ public class QuestionServlet extends HttpServlet
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/quiz","root","Anzii123");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/quiz","root","root");
 			String query="select * from questions";
 			stmt=con.createStatement();
 			result=stmt.executeQuery(query);

@@ -7,7 +7,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>user</servlet-name>
-		<url-pattern>/user1</url-pattern>
+		<url-pattern>/user</url-pattern>
 		
 	</servlet-mapping>
 	<servlet>
